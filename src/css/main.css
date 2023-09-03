@@ -63,7 +63,12 @@ header {
     align-content: center;
 
     grid-template-columns: 1fr 4em 1fr;
+    grid-template-areas: "img1 txt img2";
 }
+.two_img div:nth-of-type(1) { grid-area: img1; }
+.two_img div:nth-of-type(2) { grid-area: txt; }
+.two_img div:nth-of-type(3) { grid-area: img2; }
+
 .two_img div {
     width: 100%;
     text-align: center;
@@ -75,4 +80,14 @@ header {
 }
 .two_img div:nth-of-type(3) img {
   transform: scaleX(-1);
+}
+
+@media only screen and (max-width: 800px) {
+  .two_img {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "txt txt" "img1 img2";
+  }
+  main {
+      width: calc(90% - 10px);
+  }
 }
