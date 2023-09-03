@@ -1,0 +1,78 @@
+@font-face {
+    font-family: '101 Clownz Beanie';
+    src: local('101 Clownz Beanie'),
+    url("../fonts/101ClownzBeanie.ttf") format("truetype");
+    /* https://www.fontspace.com/101-clownz-beanie-font-f8603 */
+}
+
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: local('OpenDyslexic'),
+    url("../fonts/OpenDyslexic.otf") format("opentype");
+    /* https://opendyslexic.org/ */
+}
+
+:root {
+    /* Section Colors */
+    --bg-color          : #fff;
+    --back-color        : #ffffffaa;
+
+    /* Fonts */
+    --font-main         : 'OpenDyslexic', sans-serif;
+    --font-alt          : 'OpenDyslexic', sans-serif;
+    --font-main-color   : black;
+    --font-alt-color    : darkblue;
+
+    /* Images */
+    --bg-img            : url('../img/bg2.webp');
+    --bg-img-size       :  30%;
+}
+
+/* ---------------- */
+
+html, body {
+    background: var(--bg-img) var(--bg-color);
+    background-size:  var(--bg-img-size);
+    margin: 0;
+
+    font-family: var(--font-main);
+}
+
+main {
+    display: block;
+    min-height: 20px;
+
+    width: 70%;
+    margin: 2em auto;
+    padding: 5px;
+
+    background-color: var(--back-color);
+}
+
+header {
+    text-align: center;
+    color: var(--font-alt-color);
+}
+
+.two_img {
+    display: grid;
+    margin: auto;
+    width: 100%;
+
+    justify-content: space-around;
+    align-content: center;
+
+    grid-template-columns: 1fr 4em 1fr;
+}
+.two_img div {
+    width: 100%;
+    text-align: center;
+}
+.two_img img {
+    display: block;
+    margin: auto;
+    width: 60%;
+}
+.two_img div:nth-of-type(3) img {
+  transform: scaleX(-1);
+}
