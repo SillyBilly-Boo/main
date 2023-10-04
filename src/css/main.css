@@ -15,7 +15,7 @@
 :root {
     /* Section Colors */
     --bg-color          : #fff;
-    --back-color        : #ffffffaa;
+    --back-color        : #fff;
 
     /* Fonts */
     --font-main         : 'OpenDyslexic', sans-serif;
@@ -89,5 +89,11 @@ header {
   }
   main {
       width: calc(90% - 10px);
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  main {
+      width: 1000px;
   }
 }
