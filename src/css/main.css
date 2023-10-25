@@ -12,20 +12,36 @@
     /* https://opendyslexic.org/ */
 }
 
+/* -- */
+
+@media only screen and (max-width: 850px) {
+  .two_img {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas: "txt txt" "img1 img2";
+  }
+  #page { width: calc(90% - 4em) !important; }
+}
+
+@media only screen and (min-width: 1600px) {
+  #page { width: calc(900px - 4em) !important; }
+}
+
 :root {
     /* Section Colors */
     --bg-color          : #fff;
-    --back-color        : #fff;
+    --fg-color        : #fff;
+	
+	--fg-img 			: url('../img/bg/notebook_fg.jpg');
 
     /* Fonts */
     --font-main         : 'OpenDyslexic', sans-serif;
     --font-alt          : 'OpenDyslexic', sans-serif;
     --font-main-color   : black;
-    --font-alt-color    : darkblue;
+    --font-alt-color    : #0C1B4D;
 
     /* Images */
-    --bg-img            : url('../img/bg2.webp');
-    --bg-img-size       :  30%;
+    --bg-img            : url('../img/bg/notebook2.jpg');
+    --bg-img-size       :  10%;
 }
 
 /* ---------------- */
@@ -33,25 +49,32 @@
 html, body {
     background: var(--bg-img) var(--bg-color);
     background-size:  var(--bg-img-size);
+	background-attachment: fixed;
     margin: 0;
 
     font-family: var(--font-main);
 }
 
-main {
-    display: block;
+#page {
+    background: var(--fg-img) var(--fg-color);
+	
+	display: block;
     min-height: 20px;
 
-    width: 70%;
+    width: calc(50% - 4em);
     margin: 2em auto;
-    padding: 5px;
+    padding: 2em;
+}
 
-    background-color: var(--back-color);
+main {
+    
+
 }
 
 header {
     text-align: center;
     color: var(--font-alt-color);
+	text-shadow: 0px 0px 5px white;
 }
 
 .two_img {
@@ -82,18 +105,4 @@ header {
   transform: scaleX(-1);
 }
 
-@media only screen and (max-width: 800px) {
-  .two_img {
-      grid-template-columns: 1fr 1fr;
-      grid-template-areas: "txt txt" "img1 img2";
-  }
-  main {
-      width: calc(90% - 10px);
-  }
-}
 
-@media only screen and (min-width: 1500px) {
-  main {
-      width: 1000px;
-  }
-}
