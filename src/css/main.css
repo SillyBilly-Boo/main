@@ -16,8 +16,8 @@
 
 @media only screen and (max-width: 850px) {
   .two_img {
-      grid-template-columns: 1fr 1fr;
-      grid-template-areas: "txt txt" "img1 img2";
+      grid-template-columns: 1fr 1fr !important;
+      grid-template-areas: "txt txt" "img1 img2" !important;
   }
   #page { width: calc(90% - 4em) !important; }
 }
@@ -38,10 +38,12 @@
     --font-alt          : 'OpenDyslexic', sans-serif;
     --font-main-color   : black;
     --font-alt-color    : #0C1B4D;
+	--font-size			: calc(1rem + (1.2vw / 5));
 
     /* Images */
-    --bg-img            : url('../img/bg/notebook2.jpg');
-    --bg-img-size       :  10%;
+    --bg-img            : url('../img/bg/funky.jpg');
+    --bg-img-size       : 200px;
+	--border-img 		: url('../img/border.png') 30 / 30px / 30px round;
 }
 
 /* ---------------- */
@@ -53,6 +55,7 @@ html, body {
     margin: 0;
 
     font-family: var(--font-main);
+	font-size: var(--font-size);
 }
 
 #page {
@@ -62,8 +65,10 @@ html, body {
     min-height: 20px;
 
     width: calc(50% - 4em);
-    margin: 2em auto;
+    margin: 4em auto;
     padding: 2em;
+	
+	border-image: var(--border-img);
 }
 
 main {
