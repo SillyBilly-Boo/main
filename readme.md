@@ -1,3 +1,3 @@
-# SillyBilly.Bonk Main Site
+# SillyBilly.Boo Main Site
 
 Honk 🎉
