@@ -1,3 +1,3 @@
-# SillyBilly.Bonk Main Site
+# Website
 
-Honk 🎉
+The SillyBilly.Boo website.

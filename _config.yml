@@ -1,0 +1,24 @@
+## ## ## ##
+title: SillyBilly.Boo
+url: https://sillybilly.boo
+github_repo_url: https://github.com/SillyBilly-Boo
+language: en-us
+description: "Sillies and billies."
+keyword: "silly, silly billy, clown, web dev"
+accent_color: "#80A9F7"
+
+
+## ## ## ##
+author: RodFireProductions
+
+## ## ## ##
+include     : ["_posts", "_pages"]
+collections :
+    posts     :
+        output: true
+        permalink: /blog/:path.html
+    pages       :
+        output: true
+        permalink: /:path.html
+
+## ## ## ##

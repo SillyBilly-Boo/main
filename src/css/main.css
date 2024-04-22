@@ -1,113 +1,346 @@
-@font-face {
-    font-family: '101 Clownz Beanie';
-    src: local('101 Clownz Beanie'),
-    url("../fonts/101ClownzBeanie.ttf") format("truetype");
-    /* https://www.fontspace.com/101-clownz-beanie-font-f8603 */
-}
 
-@font-face {
-    font-family: 'OpenDyslexic';
-    src: local('OpenDyslexic'),
-    url("../fonts/OpenDyslexic.otf") format("opentype");
-    /* https://opendyslexic.org/ */
-}
-
-/* -- */
-
-@media only screen and (max-width: 850px) {
-  .two_img {
-      grid-template-columns: 1fr 1fr !important;
-      grid-template-areas: "txt txt" "img1 img2" !important;
-  }
-  #page { width: calc(90% - 4em) !important; }
-}
-
-@media only screen and (min-width: 1600px) {
-  #page { width: calc(900px - 4em) !important; }
-}
+@import url(https://fonts.bunny.net/css?family=anonymous-pro:400,400i|paytone-one:400|rubik:400,400i,700,700i);
 
 :root {
-    /* Section Colors */
-    --bg-color          : #fff;
-    --fg-color        : #fff;
-	
-	--fg-img 			: url('../img/bg/notebook_fg.jpg');
+    --add-font              : 0.1vw;
+    --font-main             : 'Rubik', sans-serif;
+    --font-mono             : 'Anonymous Pro', monospace;
+    --font-header           : 'Paytone One', sans-serif;
 
-    /* Fonts */
-    --font-main         : 'OpenDyslexic', sans-serif;
-    --font-alt          : 'OpenDyslexic', sans-serif;
-    --font-main-color   : black;
-    --font-alt-color    : #0C1B4D;
-	--font-size			: calc(1rem + (1.2vw / 5));
+    /* Colors */
+    --background-color      : white;
+    --foreground-color      : white; /* section backgrounds */
+    --text-color            : #0E1D3B; /* darkest blue */
+    --box-shadow            : 218, 207, 245; /* r, g, b */
 
-    /* Images */
-    --bg-img            : url('../img/bg/funky.jpg');
-    --bg-img-size       : 200px;
-	--border-img 		: url('../img/border.png') 30 / 30px / 30px round;
+    --accent-1              : #FCB1D3; /* pink */
+    --accent-2              : #80A9F7; /* light blue */
+    --accent-3              : #75F0CD; /*#A4F3DC; */ /* greenish color */
+    --accent-4              : #0C4FCA; /* darker blue */
+    --accent-5              : #FCD0BC; /* orange */
+    --accent-6              : #FFFBD0; /* yellow - not yet used */
 }
 
-/* ---------------- */
+@media (prefers-color-scheme: dark) {
+    --background-color      : black;
+    --foreground-color      : #111;
+    --text-color            : white;
+
+    --accent-1              : #FCB1D3;
+    --accent-2              : #80A9F7;
+    --accent-3              : #A4F3DC;
+}
+
+/* --- */
 
 html, body {
-    background: var(--bg-img) var(--bg-color);
-    background-size:  var(--bg-img-size);
-	background-attachment: fixed;
     margin: 0;
-
+    height: 100%;
+    width: 100%;
+    background: var(--background-color);
+    color: var(--text-color);
     font-family: var(--font-main);
-	font-size: var(--font-size);
+    font-size: calc(1rem + var(--add-font));
+    line-height: 1.5;
 }
 
-#page {
-    background: var(--fg-img) var(--fg-color);
-	
-	display: block;
-    min-height: 20px;
-
-    width: calc(50% - 4em);
-    margin: 4em auto;
-    padding: 2em;
-	
-	border-image: var(--border-img);
-}
-
-main {
-    
-
-}
-
-header {
-    text-align: center;
-    color: var(--font-alt-color);
-	text-shadow: 0px 0px 5px white;
-}
-
-.two_img {
-    display: grid;
-    margin: auto;
-    width: 100%;
-
-    justify-content: space-around;
-    align-content: center;
-
-    grid-template-columns: 1fr 4em 1fr;
-    grid-template-areas: "img1 txt img2";
-}
-.two_img div:nth-of-type(1) { grid-area: img1; }
-.two_img div:nth-of-type(2) { grid-area: txt; }
-.two_img div:nth-of-type(3) { grid-area: img2; }
-
-.two_img div {
-    width: 100%;
-    text-align: center;
-}
-.two_img img {
+main, footer {
+    width: 60%;
     display: block;
     margin: auto;
-    width: 60%;
+
+    @media only screen and (max-width: 800px) {
+        width: 100%;
+    }
 }
-.two_img div:nth-of-type(3) img {
-  transform: scaleX(-1);
+
+/* -- Section -- */
+section {
+    background: var(--foreground-color);
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 50px;
+
+    box-shadow: rgba(var(--box-shadow), 0.4) 0px 0px 10px, rgba(var(--box-shadow), 0.4) 0px 7px 13px -3px, rgba(var(--box-shadow), 0.2) 0px -3px 0px inset;
+
+    & section {
+        padding: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    &.outline {
+        border: var(--accent-1) .5rem solid;
+        box-shadow: rgba(var(--box-shadow), 0.4) 0px 0px 10px, rgba(var(--box-shadow), 0.4) 0px 7px 13px -3px;
+
+    }
+}
+
+/* -- Header -- */
+header {
+    padding: 1rem;
+
+    & h1, h2, h3, h4, h5, h6 {
+        text-align: center;
+        margin: 0 0 1rem 0;
+    }
+
+    & nav ul, nav menu {
+        list-style-type: none;
+        display: grid;
+        grid-auto-flow: column;
+        grid-gap: 1rem;
+        justify-content: center;
+
+        & a {
+            text-decoration: none;
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+/* -- Headings -- */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    margin: .8rem 0;
+    font-family: var(--font-header);
+}
+
+h1 { font-size: 2.8rem; }
+h2 { font-size: 2.4rem; }
+h3 { font-size: 2rem; }
+h4 { font-size: 1.6rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: .8rem; }
+
+hgroup {
+    text-align: center;
+    border-bottom: var(--accent-2) .2rem dashed;
+    padding: 0rem 0rem 1rem 0rem;
+    margin: .5rem 0 1rem 0;
+
+    & h1, h2, h3, h4, h5, h6 {
+        margin: 0rem;
+    }
+
+    & p {
+        margin: 0rem;
+    }
+}
+
+/* -- Other Typography -- */
+strong, b { font-weight: 700; }
+em, i { font-style: oblique; }
+
+u { text-decoration: underline .15rem solid var(--accent-2); }
+s { text-decoration: line-through .15rem solid var(--accent-2); }
+
+del {
+    text-decoration: line-through .15rem solid var(--accent-2);
+    background-color: var(--accent-1);
+    padding: 0rem 0.15rem;
+}
+ins {
+    text-decoration: none;
+    background-color: var(--accent-3);
+    padding: 0rem 0.15rem;
+}
+
+mark {
+    background-color: var(--accent-5);
+    color: var(--text-main);
+    padding: 0rem 0.15rem;
+}
+
+p {
+    margin: .2rem 0 .5rem .5rem;
 }
 
 
+/* -- Lists -- */
+ul, ol {
+    padding-left: 2rem;
+    margin: .15rem 0rem;
+    & li:before {
+        display: inline-block;
+        content: "";
+        padding: .2rem;
+    }
+    & ul, ol {
+        padding-left: 1.5rem;
+    }
+}
+
+ul {
+    list-style-type: "\1f921";
+    & li ul {
+        list-style-type: "\1F389";
+        & li ul {
+            list-style-type: "\2728";
+        }
+    }
+}
+
+ol {
+    list-style-type: decimal;
+    & li ol {
+        list-style-type: lower-alpha;
+        & li ol {
+            list-style-type: decimal-leading-zero;
+        }
+    }
+}
+
+/* -- Anchors & Buttons -- */
+a {
+    color: var(--accent-4);
+    text-decoration: underline .15rem dashed var(--accent-2);
+
+    &:hover {
+    color: var(--accent-2);
+    text-decoration: underline .15rem dashed var(--accent-4);
+    }
+}
+
+button,
+a.button,
+input[type=button],
+input[type=submit],
+input[type=reset] {
+    display: inline-block;
+    line-height: normal;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    margin: .2rem;
+
+    background-color: var(--accent-4);
+    color: var(--foreground-color);
+    font-size: 1rem;
+
+    &:hover {
+        background-color: var(--accent-2);
+    }
+
+    &:disabled {
+        background-color: var(--accent-2);
+        cursor: default;
+    }
+}
+
+/* -- Code -- */
+code {
+    font-family: var(--font-mono);
+    background-color: var(--accent-1);
+    padding: 0rem 0.15rem;
+}
+
+pre:has(code) {
+    border: var(--accent-3) .3rem solid;
+    border-radius: 15px;
+
+    & code {
+        background-color: var(--foreground-color);
+        border-radius: 15px;
+        display: block;
+        overflow-x: auto;
+        padding: .5rem;
+    }
+}
+
+/* -- Figures & Media -- */
+figure {
+    display: block;
+    padding: .5rem;
+    margin: .5rem 0rem;
+    & img, audio, video {
+        margin: 0rem auto;
+    }
+    & figcaption {
+        margin: .5rem 0rem 0rem 0rem;
+        text-align: center;
+        font-size: 1rem;
+        & cite {
+            font-style: italic;
+        }
+    }
+}
+
+figure:has(blockquote) {
+    padding: .5rem 0rem .5rem 2rem;
+    border-left: var(--accent-3) solid .5rem;
+    & blockquote {
+        font-size: 1.25rem;
+        & p {
+            margin: 0rem;
+            &:first-child:before {
+                content: "\201C";
+                font-size: 1.5rem;
+                font-family: serif;
+            }
+            &:last-child:after {
+                content: "\201D";
+                font-size: 1.5rem;
+                font-family: serif;
+            }
+        }
+    }
+    & figcaption {
+        margin: 0rem 0rem 0rem 1rem;
+        text-align: left;
+        &:before {
+            content: "— "
+        }
+    }
+}
+
+figure:has(img) {
+    display: block;
+    margin: 1rem 0rem;
+    & img {
+        margin: 0rem auto;
+    }
+    & figcaption {
+        text-align: center;
+    }
+}
+
+img {
+    width: 80%;
+    display: block;
+    margin: 1rem auto;
+    border-radius: 5px;
+    @media only screen and (max-width: 800px) {
+        width: 100%;
+    }
+}
+
+audio {
+    width: 50%;
+    @media only screen and (max-width: 800px) {
+        width: 80%;
+    }
+}
+
+video {
+    width: 80%;
+    @media only screen and (max-width: 800px) {
+        width: 100%;
+    }
+}
+
+audio, video {
+    border-radius: 5px;
+    display: block;
+    margin: 1rem auto;
+}
+
+/* -- Misc -- */
+hr {
+    border: none;
+    border-bottom: var(--accent-2) .2rem dashed;
+}
