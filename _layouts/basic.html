@@ -5,13 +5,20 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href={{ "./src/css/reset.css" | relative_url }}>
         <link rel="stylesheet" type="text/css" href={{ "./src/css/main.css" | relative_url }}>
         <link rel="icon" href={{ "favicon.ico" | relative_url }} type="image/png">
         {% include metadata.html %}
         <title>{{ page.title }}</title>
     </head>
     <body>
+        <div id="theme-toggle">
+            <label title="Light / Dark Toggle">
+                <input type="checkbox" name="theme-switch" id="theme-switch">
+                <span>🌞</span>
+                <span>🌚</span>
+            </label>
+        </div>
         {{ content }}
     </body>
+    <script src={{"/src/js/theme.js" | relative_url }} charset="utf-8"></script>
 </html>

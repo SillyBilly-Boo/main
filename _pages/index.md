@@ -4,10 +4,13 @@ layout: page
 ---
 
 {% section %}
-## h2
+
+Oh my gosh! Hiiii!!!
+
+Check us out: [GitHub](https://github.com/SillyBilly-Boo)
+
 {% endsection %}
 
-{% section_outline %}
-## h2
+{% section outline %}
 {% quote April Fools, you little sausage! [laughs]|Squidward Tentacles|SpongeBob SquarePants %}
-{% endsection_outline %}
+{% endsection %}

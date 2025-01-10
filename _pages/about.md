@@ -3,4 +3,9 @@ title: About
 layout: page
 ---
 
-*SillyBilly.Boo* is project meant to make other little projects.
+{% section outline center %}
+*SillyBilly.Boo* is a project meant to make other little projects.
+Its purpose is to create and inspire others to create.
+
+Email us: `bonk@sillybilly.boo`
+{% endsection %}

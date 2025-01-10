@@ -3,13 +3,9 @@ title: SillyBilly.Boo
 url: https://sillybilly.boo
 github_repo_url: https://github.com/SillyBilly-Boo
 language: en-us
-description: "Sillies and billies."
+description: "Sillies and billies making projects."
 keyword: "silly, silly billy, clown, web dev"
 accent_color: "#80A9F7"
-
-
-## ## ## ##
-author: RodFireProductions
 
 ## ## ## ##
 include     : ["_posts", "_pages"]

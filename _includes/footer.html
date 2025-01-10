@@ -1,2 +1,21 @@
 <footer>
+    <div class="p">
+        <a target="_blank" href={{ "/humans.txt" || relative_url }}>
+            <img class="crisp" src={{ "/src/img/humanstxt.gif" || relative_url }} alt="Humans.TXT">
+        </a>
+        <p>@ {{ site.time | date: '%Y' }}</p>
+    </div>
+    <div class="buttons">
+        {% for file in site.static_files %}
+            {% if file.path contains '/src/img/buttons/' %}
+                {% if file.name contains 'web3' %}
+                <a target="_blank" href="https://yesterweb.org/no-to-web3/">
+                    <img src={{"/src/img/buttons/" | append: file.name | relative_url }}>
+                </a>
+                {% else %}
+                <img src={{"/src/img/buttons/" | append: file.name | relative_url }}>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </div>
 </footer>
