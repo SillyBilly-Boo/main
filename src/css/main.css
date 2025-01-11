@@ -1,0 +1,52 @@
+
+@import "confetti.min.css";
+
+h1, h2, h3, h4, h5, h6 { color: var(--accent-4); }
+h1 { filter: hue-rotate(-30deg); }
+h2 { filter: hue-rotate(45deg); }
+h3 { filter: hue-rotate(90deg); }
+
+.center { text-align: center; }
+
+.buttons {
+    display: grid;
+    grid-template-areas: "80px 80px 80px 80px 80px 80px";
+    /*grid-template-columns: repeat( auto-fill, minmax(80px, auto) );*/
+    justify-content: center;
+	grid-gap: 0.5rem;
+
+    & img {
+        image-rendering: crisp-edges;
+        align-self: center;
+        &:nth-last-child(1) {
+            grid-area: auto / span 2;
+        }
+    }
+}
+
+.crisp { image-rendering: crisp-edges; }
+
+footer .p {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: center;
+    grid-gap: .5em;
+
+    & img {
+        width: 80px;
+        align-self: center;
+    }
+    & p {
+        align-self: center;
+        margin: 0px;
+    }
+}
+
+#toc a {
+    color: var(--foreground-color);
+    &:hover {
+        color: var(--accent-4);
+        text-decoration-color: var(--foreground-color);
+        filter: hue-rotate(calc(var(--foreground-color) + 30deg));
+    }
+}

@@ -1,0 +1,13 @@
+
+/* TEAM */
+    Developer & Artist: Rodrick
+    GitHub: RodFireProductions
+
+/* SITE */
+    Last Updated: 2025/1/10
+    Language: English
+    Doctype: HTML5
+    Technologies: Jekyll, Pulsar, FireAlpaca
+
+/* THANKS* /
+    All the people who's showed us kindness.
