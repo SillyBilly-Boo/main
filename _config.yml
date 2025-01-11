@@ -1,0 +1,22 @@
+## ## ## ##
+title: SillyBilly.Boo
+url: https://sillybilly.boo
+github_repo_url: https://github.com/SillyBilly-Boo
+language: en-us
+description: "Sillies and billies making projects."
+keyword: "silly, silly billy, clown, web dev"
+accent_color: "#80A9F7"
+
+## ## ## ##
+collections :
+    posts     :
+        output: true
+        permalink: /posts/:path.html
+    pages       :
+        output: true
+        permalink: /:path.html
+
+## ## ## ##
+plugins:
+  - jekyll-feed
+  - jekyll-toc
