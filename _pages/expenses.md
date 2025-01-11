@@ -1,15 +1,19 @@
 ---
-title: Transparency
+title: Expenses
 layout: page
 ---
 
-Last Updated: April 22th, 2024
+{% section %}
+A list of all our expenses.
+{% endsection %}
 
-How we handle our gains and expenses.
-
+{% section outline %}
 ## Reoccurring Expenses
+
+### Domains
 
 | What | How | When | Where |
 |:-:|:-:|:-:|:-:|
 | SillyBilly.Boo Domain | ~$8.73 USD | Yearly | Porkbun |
 | SillyBilly.Club Domain | ~$12.85 USD | Yearly | Porkbun |
+{% endsection %}

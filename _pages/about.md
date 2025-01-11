@@ -8,4 +8,8 @@ layout: page
 Its purpose is to create and inspire others to create.
 
 Email us: `bonk@sillybilly.boo`
+
+---
+[Expenses](/expenses.html)
+
 {% endsection %}

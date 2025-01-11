@@ -8,13 +8,15 @@ keyword: "silly, silly billy, clown, web dev"
 accent_color: "#80A9F7"
 
 ## ## ## ##
-include     : ["_posts", "_pages"]
 collections :
     posts     :
         output: true
-        permalink: /blog/:path.html
+        permalink: /posts/:path.html
     pages       :
         output: true
         permalink: /:path.html
 
 ## ## ## ##
+plugins:
+  - jekyll-feed
+  - jekyll-toc
